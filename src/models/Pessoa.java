@@ -5,21 +5,10 @@ public class Pessoa {
 	private String nome;
 	private String sobrenome;
 	private String cpf;
-	private int anoNascimento;
+	private int idade;
 	private Endereco endereco;
 	private String telefone;
 	private String email;
-
-	public Pessoa(String nome, String sobrenome, String cpf, int anoNascimento, Endereco endereco, String telefone, String email) {
-		super();
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.cpf = cpf;
-		this.anoNascimento = anoNascimento;
-		this.endereco = endereco;
-		this.telefone = telefone;
-		this.email = email;
-	}
 
 	public String getNome() {
 		return nome;
@@ -45,14 +34,6 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public int getAnoNascimento() {
-		return anoNascimento;
-	}
-
-	public void setAnoNascimento(int anoNascimento) {
-		this.anoNascimento = anoNascimento;
-	}
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -75,6 +56,20 @@ public class Pessoa {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	@Override
+	public String toString() {
+		return "Nome: " + nome + ", sobrenome = " + sobrenome + ", cpf = " + cpf + ", idade =" + idade + ", endereco = "
+				+ endereco + ", telefone = " + telefone + ", email = " + email;
 	}
 
 	

@@ -16,7 +16,7 @@ public class Principal {
 			System.out.println("2 - Paciente");
 			System.out.println("3 - Triagem");
 			System.out.println("4 - Sair");
-			System.out.println("\nDigite a op√ß√£o desejada: ");
+			System.out.println("\nDigite a opÁ„o desejada: ");
 			opcao = sc.nextInt();
 			
 			switch (opcao) {
@@ -28,27 +28,28 @@ public class Principal {
 					System.out.println("3 - Alterar recepcionista");
 					System.out.println("4 - Deletar recepcionista");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a op√ß√£o desejada: ");
+					System.out.println("\nDigite a opÁ„o desejada: ");
 					opcao = sc.nextInt();
 					
 					switch (opcao) {
 					case 1:
-						System.out.println("Cadastrando...");
+						CadastrarRecepcionista.renderizar();
 						break;
 					case 2:
+						ListarRecepcionistas.renderizar();
 						System.out.println("Listando...");
 						break;
 					case 3:
-						System.out.println("Alterando...");
+						AlterarRecepcionista.renderizar();
 						break;
 					case 4:
-						System.out.println("Deletando...");
+						DeletarRecepcionista.renderizar();
 						break;
 					case 0:
 						System.out.println("Voltando...");
 						break;
 					default:
-						System.out.println("Op√ß√£o inv√°lida!");
+						System.out.println("OpÁ„o inv·lida!");
 						break;
 					} 
 				} while (opcao != 0);
@@ -63,7 +64,7 @@ public class Principal {
 					System.out.println("3 - Alterar paciente");
 					System.out.println("4 - Deletar paciente");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a op√ß√£o desejada: ");
+					System.out.println("\nDigite a opÁ„o desejada: ");
 					opcao = sc.nextInt();
 					
 					switch (opcao) {
@@ -71,6 +72,7 @@ public class Principal {
 						System.out.println("Cadastrando...");
 						break;
 					case 2:
+						ListarRecepcionistas.renderizar();
 						System.out.println("Listando...");
 						break;
 					case 3:
@@ -83,7 +85,7 @@ public class Principal {
 						System.out.println("Voltando...");
 						break;
 					default:
-						System.out.println("Op√ß√£o inv√°lida!");
+						System.out.println("OpÁ„o inv·lida!");
 						break;
 					} 
 				} while (opcao != 0);
@@ -91,11 +93,7 @@ public class Principal {
 			break;
 			
 			case 3:
-				System.out.println("[1] - Efetuar Triagem");
-				System.out.println("[2] - Exibir pacientes que aguardam triagem");
-				System.out.println("[3] - Exibir pacientes que efetuaram triagem");
-				System.out.println("[4] - Alterar dados da triagem do paciente");
-				System.out.println("[5] - Sair");
+				System.out.println("Triagem...");
 				break;
 				
 			case 4:
@@ -103,7 +101,7 @@ public class Principal {
 				break;
 			
 			default:
-				System.out.println("Op√ß√£o inv√°lida!");
+				System.out.println("OpÁ„o inv·lida!");
 				break;
 			}
 		} while (opcao != 4);

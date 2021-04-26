@@ -4,14 +4,12 @@ import java.util.Date;
 
 public class Recepcionista {
 	private Pessoa pessoa;
-	private String credencial;
 	private Date criadoEm;
 	private Boolean estaAtivo;
 	
-	public Recepcionista(Pessoa pessoa) {
+	public Recepcionista() {
 		this.criadoEm = new Date();
 		this.estaAtivo = true;
-		this.pessoa = pessoa;
 	}
 	
 	public Boolean getEstaAtivo() {
@@ -27,12 +25,7 @@ public class Recepcionista {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-	public String getCredencial() {
-		return credencial;
-	}
-	public void setCredencial(String credencial) {
-		this.credencial = credencial;
-	}
+
 	public Date getCriadoEm() {
 		return criadoEm;
 	}
@@ -40,6 +33,9 @@ public class Recepcionista {
 		this.criadoEm = criadoEm;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return pessoa + " | Criado em: " + criadoEm;
+	}
 	
 }
