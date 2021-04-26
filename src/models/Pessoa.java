@@ -68,8 +68,8 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + ", sobrenome = " + sobrenome + ", cpf = " + cpf + ", idade =" + idade + ", endereco = "
-				+ endereco + ", telefone = " + telefone + ", email = " + email;
+		return "Nome: " + nome + " | Sobrenome: " + sobrenome + " | CPF: " + cpf + " | Idade: " + idade + " | Endereço - " + endereco + 
+				" | Telefone: " + telefone + " | Email: " + email;
 	}
 
 	

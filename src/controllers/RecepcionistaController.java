@@ -54,7 +54,7 @@ public class RecepcionistaController {
 			pessoa.setSobrenome(newValue);
 			
 		}
-		if(op==2) {
+		if(op==3) {
 			pessoa.setCpf(newValue);
 		}
 		

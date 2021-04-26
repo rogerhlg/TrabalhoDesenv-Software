@@ -16,7 +16,7 @@ public class CadastrarPessoa {
 		System.out.println("\nInsira o sobrenome: ");
 		pessoa.setSobrenome(sc.next());
 		
-		System.out.println("\nInsira o cpf: ");
+		System.out.println("\nInsira o CPF: ");
 		pessoa.setCpf(sc.next());
 		
 		System.out.println("\nInsira a idade: ");

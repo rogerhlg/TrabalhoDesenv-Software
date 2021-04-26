@@ -1,14 +1,11 @@
 package views;
 
-import java.util.Scanner;
-
 import controllers.RecepcionistaController;
 import models.Recepcionista;
 
 public class CadastrarRecepcionista {
 	
 	private static Recepcionista recepcionista;
-	private static Scanner sc = new Scanner(System.in);
 	
 	public static void renderizar() {
 		recepcionista = new Recepcionista();

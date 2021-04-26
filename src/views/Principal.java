@@ -69,17 +69,16 @@ public class Principal {
 					
 					switch (opcao) {
 					case 1:
-						System.out.println("Cadastrando...");
+						CadastrarPaciente.renderizar();
 						break;
 					case 2:
-						ListarRecepcionistas.renderizar();
-						System.out.println("Listando...");
+						ListarPacientes.renderizar();
 						break;
 					case 3:
-						System.out.println("Alterando...");
+						AlterarPaciente.renderizar();
 						break;
 					case 4:
-						System.out.println("Deletando...");
+						DeletarPaciente.renderizar();
 						break;
 					case 0:
 						System.out.println("Voltando...");
