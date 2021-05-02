@@ -7,7 +7,7 @@ public class DeletarRecepcionista {
 		
 		public static void renderizar() {
 			System.out.println("\nInsira o CPF do recepcionista que deseja deletar: ");
-			if(RecepcionistaController.Deletar(sc.next())) {
+			if(RecepcionistaController.deletar(sc.next())) {
 				System.out.println("\n*** Recepcionista deletado com sucesso! ***");
 			}
 			else 

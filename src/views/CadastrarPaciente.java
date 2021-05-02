@@ -9,12 +9,12 @@ public class CadastrarPaciente {
 	
 	public static void renderizar() {
 		paciente = new Paciente();
-		System.out.println("\n-- CADASTRAR PACIENTE --  \n");
+		System.out.println("\n-- CADASTRO DE PACIENTE --  \n");
 		paciente.setPessoa(CadastrarPessoa.renderizar());
 		if(PacienteController.cadastrar(paciente)) {
 			System.out.println("\nPaciente cadastrado com sucesso!");
 		}else {
-			System.out.println("Esse Paciente já está cadastrado!");
+			System.out.println("\n**ERRO** Esse paciente j� existe!");
 		}
 	}
 }
