@@ -36,7 +36,7 @@ public class EfetuarTriagem {
 				triagem.setPaciente(paciente);
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
 				sintomas = CadastrarSintomas.renderizar();
-				triagem.setSintoma(sintomas);
+
 			}
 			else {
 				System.out.println("**ERRO, paciente inexistente!**");
