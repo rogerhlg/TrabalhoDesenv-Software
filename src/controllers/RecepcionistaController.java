@@ -11,7 +11,7 @@ public class RecepcionistaController {
 	 
 	public static Boolean cadastrar(Recepcionista recepcionista) {
 		//VERIFICA SE O CLIENTE (CPF) JÁ ESTÁ PRESENTE NA LISTA.
-		if(BuscarPorCpf(recepcionista.getPessoa().getCpf()) == null) {
+		if(buscarPorCpf(recepcionista.getPessoa().getCpf()) == null) {
 			recepcionistas.add(recepcionista);
 			return true;
 		}
@@ -20,7 +20,7 @@ public class RecepcionistaController {
 	}
 	
 	
-	public static Recepcionista BuscarPorCpf(String cpf){
+	public static Recepcionista buscarPorCpf(String cpf){
 		for(Recepcionista RecepCadastrado : recepcionistas) {
 			if(RecepCadastrado.getPessoa().getCpf().equals(cpf)){
 				return RecepCadastrado;
@@ -34,7 +34,7 @@ public class RecepcionistaController {
 	}
 	
 	public static Boolean Deletar(String cpf) {
-		Recepcionista recepcionista = BuscarPorCpf(cpf);
+		Recepcionista recepcionista = buscarPorCpf(cpf);
 		if(recepcionista != null) {
 			recepcionistas.remove(recepcionista);
 			return true;
@@ -44,7 +44,7 @@ public class RecepcionistaController {
 	}
 	
 	public static void Alterar(String cpf, int op, String newValue) {
-		Recepcionista recepcionista = BuscarPorCpf(cpf);
+		Recepcionista recepcionista = buscarPorCpf(cpf);
 		Pessoa pessoa = recepcionista.getPessoa();
 		if(op==1) {
 			

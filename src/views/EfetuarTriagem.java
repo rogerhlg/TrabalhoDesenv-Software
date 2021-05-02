@@ -1,28 +1,51 @@
 package views;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import controllers.Triagem;
+import controllers.PacienteController;
+import controllers.RecepcionistaController;
+import models.Paciente;
+import models.Recepcionista;
+import models.Sintoma;
+import models.Triagem;
+
 
 public class EfetuarTriagem {
+	private static Triagem triagem;
+	private static Paciente paciente;
+	private static Recepcionista recepcionista;
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<Sintoma> sintomas;
 	
-	
-	public static void efetuarTriagem() {
-		String d;
-		System.out.println("---------- Efetuar Triagem ----------");
+	public static void renderizar() {
+		System.out.println("\n---------- Efetuar Triagem ----------");
+		triagem  = new Triagem();
+		paciente = new Paciente();
+		recepcionista = new Recepcionista();
+		sintomas = new ArrayList<Sintoma>();
 		
-		Triagem triagem = new Triagem();
-		Scanner s = new Scanner(System.in);
-		System.out.println("Informe o Código da Triagem: ");
-		triagem.idTriagem = Integer.parseInt(s.nextLine());
-		System.out.println("Informe o Código do paciente: ");
-		triagem.idPaciente = Integer.parseInt(s.nextLine());
-		System.out.println("Informe o Grau de urgencia([1] - [2] - [3]");
-		triagem.Grau_urgencia = Integer.parseInt(s.nextLine());
-		System.out.println("Infome os Sintomas do paciente");
-		triagem.Sintomas = s.nextLine();
+		System.out.println("\nInforme o CPF do recepcionista: ");
+		recepcionista = RecepcionistaController.buscarPorCpf(sc.next());
+		if( recepcionista != null) {
+			triagem.setRecepcionista(recepcionista);
+			
+			System.out.println("\nInforme o CPF do paciente: ");
+			paciente = PacienteController.buscarPorCpf(sc.next());
+			if( paciente != null) {
+				triagem.setPaciente(paciente);
+				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
+				sintomas = CadastrarSintomas.renderizar();
+			}
+			else {
+				System.out.println("**ERRO, paciente inexistente!**");
+			}
+		}
+		else {
+			System.out.println("\nERRO, recepcionista inexistente!");
+		}
 		
-		System.out.println("Triagem Efetuada!");
+		System.out.println("\nTriagem Efetuada!");
 		}
 	
 	

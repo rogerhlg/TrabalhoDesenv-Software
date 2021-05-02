@@ -1,8 +1,9 @@
 package models;
 
 public class Sintoma {
+	
 	private String nome;
-	private int grauIntesidade;
+	private int grauIntensidade;
 	
 	public String getNome() {
 		return nome;
@@ -11,10 +12,14 @@ public class Sintoma {
 		this.nome = nome;
 	}
 	public int getGrauIntesidade() {
-		return grauIntesidade;
+		return grauIntensidade;
 	}
 	public void setGrauIntesidade(int grauIntesidade) {
-		this.grauIntesidade = grauIntesidade;
+		this.grauIntensidade = grauIntesidade;
 	}
 	
+	@Override
+	public String toString() {
+		return "\nNome: " + nome + " " + grauIntensidade + "(Intensidade)";
+	}
 }

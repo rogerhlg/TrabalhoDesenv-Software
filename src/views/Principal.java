@@ -93,6 +93,7 @@ public class Principal {
 			
 			case 3:
 				System.out.println("Triagem...");
+				EfetuarTriagem.renderizar();
 				break;
 				
 			case 4:

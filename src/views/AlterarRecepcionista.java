@@ -10,7 +10,7 @@ public class AlterarRecepcionista {
 		int op;
 		System.out.println("\nInsira o CPF do recepcionista que deseja ALTERAR: ");
 		String cpf = sc.next();
-		if(RecepcionistaController.BuscarPorCpf(cpf) != null) {
+		if(RecepcionistaController.buscarPorCpf(cpf) != null) {
 			do{
 			System.out.println("SELECIONE A OPCAO DESEJADA PARA ALTERAR");
 			System.out.println("\n1-Nome\n2-Sobrenome\n3CPF-\n0-SAIR\n");
