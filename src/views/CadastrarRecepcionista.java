@@ -9,13 +9,13 @@ public class CadastrarRecepcionista {
 	
 	public static void renderizar() {
 		recepcionista = new Recepcionista();
-		System.out.println("\n******* CADASTRO DE RECEPCIONISTA*******");
+		System.out.println("\n-- CADASTRO DE RECEPCIONISTA --");
 		recepcionista.setPessoa(CadastrarPessoa.renderizar());
 		if(RecepcionistaController.cadastrar(recepcionista)) {
 			System.out.println("\nRecepcionista cadastrado com sucesso!");
 		}
 		else
-			System.out.println("\n **ERRO** Recepcionista já existe.");
+			System.out.println("\n**ERRO** Esse recepcionista já existe");
 
 	}
 }

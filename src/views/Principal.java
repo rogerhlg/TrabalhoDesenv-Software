@@ -37,7 +37,6 @@ public class Principal {
 						break;
 					case 2:
 						ListarRecepcionistas.renderizar();
-						System.out.println("Listando...");
 						break;
 					case 3:
 						AlterarRecepcionista.renderizar();

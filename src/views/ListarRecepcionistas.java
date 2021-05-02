@@ -5,8 +5,7 @@ import models.Recepcionista;
 
 public class ListarRecepcionistas {
 	static void renderizar(){
-		
-		for(Recepcionista RecepCadastrado : RecepcionistaController.Listar()) {
+		for(Recepcionista RecepCadastrado : RecepcionistaController.listar()) {
 			System.out.println(RecepCadastrado);
 		}
 	}

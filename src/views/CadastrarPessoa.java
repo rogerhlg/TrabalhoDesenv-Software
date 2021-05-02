@@ -10,6 +10,7 @@ public class CadastrarPessoa {
 	
 	public static Pessoa renderizar() {
 		pessoa = new Pessoa();
+		System.out.println("\n### DADOS PESSOAIS ### ");
 		System.out.println("\nInsira o nome: ");
 		pessoa.setNome(sc.next());
 		
