@@ -1,33 +1,40 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Triagem {
-	public int idTriagem;
-	public int idPaciente;
-	public String Sintomas;
-	public int Grau_urgencia;
-	public int getIdTriagem() {
-		return idTriagem;
+	public Triagem() {
+		setCriadoEm(new Date());
 	}
-	public void setIdTriagem(int idTriagem) {
-		this.idTriagem = idTriagem;
+	public Paciente paciente;
+	public ArrayList<Sintoma> sintoma;
+	public Recepcionista recepcionista;
+	public Date criadoEm;
+	
+	public Paciente getPaciente() {
+		return paciente;
 	}
-	public int getIdPaciente() {
-		return idPaciente;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
-	public void setIdPaciente(int idPaciente) {
-		this.idPaciente = idPaciente;
+	public ArrayList<Sintoma> getSintoma() {
+		return sintoma;
 	}
-	public String getSintomas() {
-		return Sintomas;
+	public void setSintoma(ArrayList<Sintoma> sintoma) {
+		this.sintoma = sintoma;
 	}
-	public void setSintomas(String sintomas) {
-		Sintomas = sintomas;
+	public Recepcionista getRecepcionista() {
+		return recepcionista;
 	}
-	public int getGrau_urgencia() {
-		return Grau_urgencia;
+	public void setRecepcionista(Recepcionista recepcionista) {
+		this.recepcionista = recepcionista;
 	}
-	public void setGrau_urgencia(int grau_urgencia) {
-		Grau_urgencia = grau_urgencia;
+	public Date getCriadoEm() {
+		return criadoEm;
+	}
+	public void setCriadoEm(Date criadoEm) {
+		this.criadoEm = criadoEm;
 	}
 	
 }
