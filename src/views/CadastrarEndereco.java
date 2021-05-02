@@ -10,14 +10,14 @@ public class CadastrarEndereco {
 	public static Endereco renderizar() {
 		endereco = new Endereco();
 		
-		System.out.println("\nInsira o endereço:");
-		System.out.println("\nLOGRADOURO: ");
+		System.out.println("\n### ENDEREÇO ###");
+		System.out.println("\nLogradouro: ");
 		endereco.setLogradouro(sc.next());
-		System.out.println("\nNÚMERO: ");
+		System.out.println("\nNúmero: ");
 		endereco.setNumero(sc.next());
-		System.out.println("\nBAIRRO: ");
+		System.out.println("\nBairro: ");
 		endereco.setBairro(sc.next());
-		System.out.println("\nCIDADE: ");
+		System.out.println("\nCidade: ");
 		endereco.setCidade(sc.next());
 		System.out.println("\nCEP: ");
 		endereco.setCep(sc.next());
