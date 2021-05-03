@@ -92,7 +92,6 @@ public class Principal {
 			break;
 			
 			case 3:
-				System.out.println("Triagem...");
 				EfetuarTriagem.renderizar();
 				break;
 				
@@ -100,7 +99,7 @@ public class Principal {
 				do {
 					System.out.println("\n-- FILA PARA A TRIAGEM --");
 					System.out.println("\n1 - Proximo paciente");
-					System.out.println("2 - Listar a fila completa");
+					System.out.println("2 - Listar a fila para triagem (por ordem de chegada)");
 					System.out.println("0 - Voltar");
 					System.out.println("\nDigite a opção desejada: ");
 					opcao = sc.nextInt();

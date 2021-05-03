@@ -18,7 +18,7 @@ public class CadastrarPaciente {
 				System.out.println("\nPaciente adicionado na lista de espera da triagem.");
 			}
 		}else {
-			System.out.println("\n**ERRO** Esse paciente já existe!");
+			System.out.println("\n**ERRO** Já existe um paciente com esse CPF!");
 		}
 	}
 }

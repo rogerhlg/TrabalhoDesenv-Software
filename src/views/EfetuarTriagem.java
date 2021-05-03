@@ -35,7 +35,7 @@ public class EfetuarTriagem {
 				String nome = paciente.getPessoa().getNome();
 				String cpf = paciente.getPessoa().getCpf();
 				
-				System.out.println("\nTriagem aberta para: \nPaciente: " + nome + " CPF: " + cpf );
+				System.out.println("\nTriagem aberta para: \nPaciente: " + nome + " | CPF: " + cpf );
 				
 				triagem.setPaciente(paciente);
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
@@ -44,19 +44,14 @@ public class EfetuarTriagem {
 				
 				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
 				FilaTriagemController.remover();
+				System.out.println("\nTriagem Efetuada!");
 			}
 			else {
-				System.out.println("*** ERRO, Fila de paciente vazia ***");
+				System.out.println("Fila de pacientes vazia!");
 			}
 		}
 		else {
-			System.out.println("\nERRO, recepcionista inexistente!");
-		}
-		
-		System.out.println("\nTriagem Efetuada!");
-		
-		}
-	
-	
-
+			System.out.println("\n**ERRO** Recepcionista inexistente!");
+		}	
+	}
 }

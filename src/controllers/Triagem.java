@@ -6,6 +6,7 @@ public class Triagem {
 	public String Sintomas;
 	public Object idTriagem;
 	public Object idPaciente;
+	
 	public void setInt(int i, Object grau_urgencia2) {
 		// TODO Auto-generated method stub
 		
