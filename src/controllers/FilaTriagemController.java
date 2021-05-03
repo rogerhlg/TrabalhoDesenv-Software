@@ -26,11 +26,11 @@ public class FilaTriagemController {
 	}
 	
 	public static void listar() {
-		for(Paciente paciente : filaEspera) { 
-			if (paciente != null) {
+		if(filaEspera.isEmpty()) {
+			System.out.println("\nFila vazia!");
+		}else {
+			for(Paciente paciente : filaEspera) { 
 				System.out.println(paciente.toString());
-			}else {
-				System.out.println("Lista vazia!");
 			}
 		}
 	}

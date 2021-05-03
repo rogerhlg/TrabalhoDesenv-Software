@@ -28,13 +28,13 @@ public class CadastrarSintomas {
 
 			sintomas.add(sintoma);
 			do {
-				System.out.println("\n1-Inserir novo sintoma\n2-Sair");
+				System.out.println("\n1 - Inserir novo sintoma\n0 - Voltar");
 				op = sc.nextInt();
-				if (op != 1 && op != 2) {
+				if (op != 1 && op != 0) {
 					System.out.println("\n**ERRO** Opção inválida!");
 				}
-			}while(op != 1 && op != 2);
-		}while(op != 2);
+			}while(op != 1 && op != 0);
+		}while(op != 0);
 		
 		return sintomas;
 	}
