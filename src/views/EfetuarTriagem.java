@@ -19,6 +19,7 @@ public class EfetuarTriagem {
 	private static ArrayList<Sintoma> sintomas;
 	
 	public static void renderizar() {
+		
 		System.out.println("\n---------- Efetuar Triagem ----------");
 		triagem  = new Triagem();
 		paciente = new Paciente();
@@ -44,7 +45,7 @@ public class EfetuarTriagem {
 				
 				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
 				FilaTriagemController.remover();
-				System.out.println("\nTriagem Efetuada!");
+				System.out.println("\nTriagem Finalizada!");
 			}
 			else {
 				System.out.println("Fila de pacientes vazia!");
