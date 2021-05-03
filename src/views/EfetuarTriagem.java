@@ -3,7 +3,7 @@ package views;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import controllers.PacienteController;
+import controllers.FilaTriagemController;
 import controllers.RecepcionistaController;
 import models.Paciente;
 import models.Recepcionista;
@@ -29,17 +29,24 @@ public class EfetuarTriagem {
 		recepcionista = RecepcionistaController.buscarPorCpf(sc.next());
 		if( recepcionista != null) {
 			triagem.setRecepcionista(recepcionista);
+			paciente = FilaTriagemController.proximo();
 			
-			System.out.println("\nInforme o CPF do paciente: ");
-			paciente = PacienteController.buscarPorCpf(sc.next());
 			if( paciente != null) {
+				String nome = paciente.getPessoa().getNome();
+				String cpf = paciente.getPessoa().getCpf();
+				
+				System.out.println("\nTriagem aberta para: \nPaciente: " + nome + " CPF: " + cpf );
+				
 				triagem.setPaciente(paciente);
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
 				sintomas = CadastrarSintomas.renderizar();
 				triagem.setSintoma(sintomas);
+				
+				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
+				FilaTriagemController.remover();
 			}
 			else {
-				System.out.println("**ERRO, paciente inexistente!**");
+				System.out.println("*** ERRO, Fila de paciente vazia ***");
 			}
 		}
 		else {
@@ -47,6 +54,7 @@ public class EfetuarTriagem {
 		}
 		
 		System.out.println("\nTriagem Efetuada!");
+		
 		}
 	
 	

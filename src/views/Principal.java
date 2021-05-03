@@ -15,7 +15,8 @@ public class Principal {
 			System.out.println("\n1 - Recepcionista");
 			System.out.println("2 - Paciente");
 			System.out.println("3 - Triagem");
-			System.out.println("4 - Sair");
+			System.out.println("4 - Consultar fila para a triagem");
+			System.out.println("5 - Sair");
 			System.out.println("\nDigite a opção desejada: ");
 			opcao = sc.nextInt();
 			
@@ -96,6 +97,31 @@ public class Principal {
 				break;
 				
 			case 4:
+				do {
+					System.out.println("\n-- FILA PARA A TRIAGEM --");
+					System.out.println("\n1 - Proximo paciente");
+					System.out.println("2 - Listar a fila completa");
+					System.out.println("0 - Voltar");
+					System.out.println("\nDigite a opção desejada: ");
+					opcao = sc.nextInt();
+					
+					switch (opcao) {
+					case 1:
+						FilaTriagem.proximo();
+						break;
+					case 2:
+						FilaTriagem.listar();
+						break;
+					case 0:
+						System.out.println("Voltando...");
+						break;
+					default:
+						System.out.println("Opção inválida!");
+						break;
+					} 
+				} while (opcao != 0);
+				break;
+			case 5:
 				System.out.println("Saindo...");
 				break;
 			
@@ -103,7 +129,7 @@ public class Principal {
 				System.out.println("Opção inválida!");
 				break;
 			}
-		} while (opcao != 4);
+		} while (opcao != 5);
 			
 
 	}
