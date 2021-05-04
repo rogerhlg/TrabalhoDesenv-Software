@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import controllers.FilaTriagemController;
 import controllers.RecepcionistaController;
+import controllers.SintomasController;
 import controllers.TriagemController;
 import models.Paciente;
 import models.Recepcionista;
@@ -20,7 +21,7 @@ public class EfetuarTriagem {
 	private static ArrayList<Sintoma> sintomas;
 	
 	public static void renderizar() {
-		
+		int urgencia;
 		System.out.println("\n---------- Efetuar Triagem ----------");
 		triagem  = new Triagem();
 		paciente = new Paciente();
@@ -42,6 +43,8 @@ public class EfetuarTriagem {
 				triagem.setPaciente(paciente);
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
 				sintomas = CadastrarSintomas.renderizar();
+				urgencia = SintomasController.retornoUrgencia(sintomas);
+				triagem.setUrgencia(urgencia);
 				triagem.setSintoma(sintomas);
 				//ADICIONAR A TRIAGENS CONCLUIDAS
 				TriagemController.cadastrar(triagem);

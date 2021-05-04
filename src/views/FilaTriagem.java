@@ -20,8 +20,6 @@ public class FilaTriagem {
 	
 	public static void listar(){
 		
-		//nextPaciente = new Paciente();
-		
 		FilaTriagemController.listar();
 
 	}

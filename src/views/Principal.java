@@ -2,6 +2,8 @@ package views;
 
 import java.util.Scanner;
 
+import controllers.TriagemController;
+
 public class Principal {
 	
 	private static Scanner sc = new Scanner(System.in);
@@ -127,22 +129,14 @@ public class Principal {
 			case 4:
 				do {
 					System.out.println("\n-- MENU CONSULTA COM MÉDICO --");
-					System.out.println("\n1 - Nova consulta");
-					System.out.println("2 - Próximo paciente");
-					System.out.println("3 - Fila de espera para consulta (por ordem de prioridade)");
+					System.out.println("1 - Fila de espera para consulta (por ordem de prioridade)");
 					System.out.println("0 - Voltar");
 					System.out.println("\nDigite a opção desejada: ");
 					opcao = sc.nextInt();
 					
 					switch (opcao) {
 					case 1:
-						System.out.println("consulta...");
-						break;
-					case 2:
-						System.out.println("próximo paciente");
-						break;
-					case 3:
-						System.out.println("fila de espera...");
+						TriagemController.listar();
 						break;
 					case 0:
 						System.out.println("Voltando...");

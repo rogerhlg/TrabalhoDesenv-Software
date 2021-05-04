@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Triagem {
+public class Triagem implements Comparable<Triagem>{
 	public Triagem() {
 		setCriadoEm(new Date());
 	}
@@ -11,7 +11,14 @@ public class Triagem {
 	public ArrayList<Sintoma> sintoma;
 	public Recepcionista recepcionista;
 	public Date criadoEm;
+	public int urgencia;
 	
+	public int getUrgencia() {
+		return urgencia;
+	}
+	public void setUrgencia(int urgencia) {
+		this.urgencia = urgencia;
+	}
 	public Paciente getPaciente() {
 		return paciente;
 	}
@@ -37,9 +44,23 @@ public class Triagem {
 		this.criadoEm = criadoEm;
 	}
 	
+	
+	
 	@Override
 	public String toString() {
 		return "\nPaciente: " + paciente + " | Sintomas: " + sintoma ;
 	}
+	
+	@Override 
+	public int compareTo(Triagem outraTriagem) {
+		if (this.urgencia > outraTriagem.getUrgencia()) { 
+			return -1; 
+		}
+		if (this.urgencia < outraTriagem.getUrgencia()) { 
+			return 1; 
+		} 
+		return 0; 
+	}
+	
 	
 }

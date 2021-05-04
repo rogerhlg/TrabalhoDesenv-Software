@@ -27,7 +27,6 @@ public class CadastrarSintomas {
 				}
 			}while(intensidade>3 || intensidade <1);
 			sintoma.setGrauIntesidade(intensidade);
-
 			sintomas.add(sintoma);
 			do {
 				System.out.println("\n1 - Inserir novo sintoma\n0 - Voltar");

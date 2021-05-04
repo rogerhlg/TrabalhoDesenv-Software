@@ -4,7 +4,14 @@ public class Sintoma {
 	
 	private String nome;
 	private int grauIntensidade;
+	private int urgencia;
 	
+	public int getUrgencia() {
+		return urgencia;
+	}
+	public void setUrgencia(int urgencia) {
+		this.urgencia = urgencia;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -20,6 +27,6 @@ public class Sintoma {
 	
 	@Override
 	public String toString() {
-		return "\nNome: " + nome + " " + grauIntensidade + "(Intensidade)";
+		return "\nNome: " + nome  + " Prioridade: " + grauIntensidade + "\n"; 
 	}
 }
