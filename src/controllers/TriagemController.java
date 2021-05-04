@@ -10,4 +10,8 @@ public class TriagemController {
 	public static ArrayList<Triagem> listarTriagens() {
 		return triagens;
 	}
+	
+	public static void cadastrar(Triagem triagem){
+		triagens.add(triagem);
+	}
 }

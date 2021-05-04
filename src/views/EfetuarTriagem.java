@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import controllers.FilaTriagemController;
 import controllers.RecepcionistaController;
+import controllers.TriagemController;
 import models.Paciente;
 import models.Recepcionista;
 import models.Sintoma;
@@ -42,10 +43,12 @@ public class EfetuarTriagem {
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
 				sintomas = CadastrarSintomas.renderizar();
 				triagem.setSintoma(sintomas);
-				
+				//ADICIONAR A TRIAGENS CONCLUIDAS
+				TriagemController.cadastrar(triagem);
 				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
 				FilaTriagemController.remover();
 				System.out.println("\nTriagem Finalizada!");
+				
 			}
 			else {
 				System.out.println("Fila de pacientes vazia!");
