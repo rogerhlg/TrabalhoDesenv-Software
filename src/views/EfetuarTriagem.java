@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controllers.FilaTriagemController;
-import controllers.RecepcionistaController;
+import controllers.EnfermeiraController;
 import controllers.SintomasController;
 import controllers.TriagemController;
 import models.Paciente;
-import models.Recepcionista;
+import models.Enfermeira;
 import models.Sintoma;
 import models.Triagem;
 
@@ -16,7 +16,7 @@ import models.Triagem;
 public class EfetuarTriagem {
 	private static Triagem triagem;
 	private static Paciente paciente;
-	private static Recepcionista recepcionista;
+	private static Enfermeira enfermeira;
 	private static Scanner sc = new Scanner(System.in);
 	private static ArrayList<Sintoma> sintomas;
 	
@@ -25,13 +25,13 @@ public class EfetuarTriagem {
 		System.out.println("\n---------- Efetuar Triagem ----------");
 		triagem  = new Triagem();
 		paciente = new Paciente();
-		recepcionista = new Recepcionista();
+		enfermeira = new Enfermeira();
 		sintomas = new ArrayList<Sintoma>();
 		
-		System.out.println("\nInforme o CPF do recepcionista: ");
-		recepcionista = RecepcionistaController.buscarPorCpf(sc.next());
-		if( recepcionista != null) {
-			triagem.setRecepcionista(recepcionista);
+		System.out.println("\nInforme o CPF da enfermeira: ");
+		enfermeira = EnfermeiraController.buscarPorCpf(sc.next());
+		if( enfermeira != null) {
+			triagem.setEnfermeira(enfermeira);
 			paciente = FilaTriagemController.proximo();
 			
 			if( paciente != null) {

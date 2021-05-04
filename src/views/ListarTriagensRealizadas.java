@@ -6,7 +6,7 @@ import controllers.TriagemController;
 public class ListarTriagensRealizadas {
 
 	public static void listarTriagens(){
-		System.out.println("\n-- LISTAR TRIAGENS REALIZADAS --  \n");
+		System.out.println("\n-- LISTA DE TRIAGENS REALIZADAS --  \n");
 		for(Triagem triagens : TriagemController.listarTriagens()) {
 			System.out.println(triagens);
 		}

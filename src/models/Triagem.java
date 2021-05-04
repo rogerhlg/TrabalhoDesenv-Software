@@ -9,7 +9,7 @@ public class Triagem implements Comparable<Triagem>{
 	}
 	public Paciente paciente;
 	public ArrayList<Sintoma> sintoma;
-	public Recepcionista recepcionista;
+	public Enfermeira enfermeira;
 	public Date criadoEm;
 	public int urgencia;
 	
@@ -31,11 +31,11 @@ public class Triagem implements Comparable<Triagem>{
 	public void setSintoma(ArrayList<Sintoma> sintoma) {
 		this.sintoma = sintoma;
 	}
-	public Recepcionista getRecepcionista() {
-		return recepcionista;
+	public Enfermeira getEnfermeira() {
+		return enfermeira;
 	}
-	public void setRecepcionista(Recepcionista recepcionista) {
-		this.recepcionista = recepcionista;
+	public void setEnfermeira(Enfermeira enfermeira) {
+		this.enfermeira = enfermeira;
 	}
 	public Date getCriadoEm() {
 		return criadoEm;

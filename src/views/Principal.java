@@ -14,10 +14,10 @@ public class Principal {
 		
 		do {
 			System.out.println("\n-- TRIAGEM HOSPITALAR --");
-			System.out.println("\n1 - Recepcionista");
+			System.out.println("\n1 - Enfermeira");
 			System.out.println("2 - Paciente");
 			System.out.println("3 - Triagem");
-			System.out.println("4 - Consulta com médico");
+			System.out.println("4 - Consulta");
 			System.out.println("5 - Sair");
 			System.out.println("\nDigite a opção desejada: ");
 			opcao = sc.nextInt();
@@ -25,27 +25,27 @@ public class Principal {
 			switch (opcao) {
 			case 1: {
 				do {
-					System.out.println("\n-- MENU RECEPCIONISTA --");
-					System.out.println("\n1 - Cadastrar recepcionista");
-					System.out.println("2 - Listar recepcionistas");
-					System.out.println("3 - Alterar recepcionista");
-					System.out.println("4 - Deletar recepcionista");
+					System.out.println("\n-- MENU ENFERMEIRA --");
+					System.out.println("\n1 - Cadastrar enfermeira");
+					System.out.println("2 - Listar enfermeiras");
+					System.out.println("3 - Alterar enfermeira");
+					System.out.println("4 - Deletar enfermeira");
 					System.out.println("0 - Voltar");
 					System.out.println("\nDigite a opção desejada: ");
 					opcao = sc.nextInt();
 					
 					switch (opcao) {
 					case 1:
-						CadastrarRecepcionista.renderizar();
+						CadastrarEnfermeira.renderizar();
 						break;
 					case 2:
-						ListarRecepcionistas.renderizar();
+						ListarEnfermeiras.renderizar();
 						break;
 					case 3:
-						AlterarRecepcionista.renderizar();
+						AlterarEnfermeira.renderizar();
 						break;
 					case 4:
-						DeletarRecepcionista.renderizar();
+						DeletarEnfermeira.renderizar();
 						break;
 					case 0:
 						System.out.println("Voltando...");

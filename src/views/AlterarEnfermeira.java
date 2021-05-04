@@ -2,15 +2,15 @@ package views;
 
 import java.util.Scanner;
 
-import controllers.RecepcionistaController;
+import controllers.EnfermeiraController;
 
-public class AlterarRecepcionista {
+public class AlterarEnfermeira {
 	private static Scanner sc = new Scanner(System.in);
 	public static void renderizar() {
 		int op;
-		System.out.println("\nInsira o CPF do recepcionista que deseja ALTERAR: ");
+		System.out.println("\nInsira o CPF da enfermeira que deseja ALTERAR: ");
 		String cpf = sc.next();
-		if(RecepcionistaController.buscarPorCpf(cpf) != null) {
+		if(EnfermeiraController.buscarPorCpf(cpf) != null) {
 			do{
 			System.out.println("\nSELECIONE A OPCAO DESEJADA PARA ALTERAR");
 			System.out.println("\n1- Nome"
@@ -41,7 +41,7 @@ public class AlterarRecepcionista {
 				
 			case 4:
 				System.out.println("\nInsira a nova idade:");
-				RecepcionistaController.alterar(cpf,op,sc.nextInt());
+				EnfermeiraController.alterar(cpf,op,sc.nextInt());
 				break;
 				
 			case 5:
@@ -80,13 +80,13 @@ public class AlterarRecepcionista {
 				break;
 			}
 			if(op!=0 && op!= 4)
-			RecepcionistaController.alterar(cpf,op,sc.next());
+			EnfermeiraController.alterar(cpf,op,sc.next());
 			
 			}while(op != 0);
 		
 			System.out.println("\nAlterado com sucesso!\n");
 		}
 		else 
-			System.out.println("\n**ERRO** Recepcionista solicitado, não encontrado!");
+			System.out.println("\n**ERRO** Enfermeira solicitada, não encontrada!");
 	}
 }
