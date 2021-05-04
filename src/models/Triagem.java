@@ -48,7 +48,7 @@ public class Triagem implements Comparable<Triagem>{
 	
 	@Override
 	public String toString() {
-		return "\nPaciente: " + paciente + " | Sintomas: " + sintoma ;
+		return "\n\nPrioridade: " + urgencia + " | Paciente: " + paciente + " | Sintomas: " + sintoma ;
 	}
 	
 	@Override 

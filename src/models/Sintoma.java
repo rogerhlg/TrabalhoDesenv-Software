@@ -27,6 +27,6 @@ public class Sintoma {
 	
 	@Override
 	public String toString() {
-		return "\nNome: " + nome  + " Prioridade: " + grauIntensidade + "\n"; 
+		return "\nNome: " + nome  + " Intensidade: " + grauIntensidade + "\n"; 
 	}
 }
