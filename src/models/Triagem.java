@@ -39,7 +39,7 @@ public class Triagem {
 	
 	@Override
 	public String toString() {
-		return "\nPaciente: " + paciente + " | Sintomas: " + sintoma;
+		return "\nPaciente: " + paciente + " | Sintomas: " + sintoma ;
 	}
 	
 }
