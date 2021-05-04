@@ -97,6 +97,7 @@ public class Principal {
 					System.out.println("\n1 - Nova triagem");
 					System.out.println("2 - Próximo paciente");
 					System.out.println("3 - Consultar fila de espera para triagem (por ordem de chegada)");
+					System.out.println("4 - Listar triagens realizadas");
 					System.out.println("0 - Voltar");
 					System.out.println("\nDigite a opção desejada: ");
 					opcao = sc.nextInt();
@@ -110,6 +111,9 @@ public class Principal {
 						break;
 					case 3:
 						FilaTriagem.listar();
+						break;
+					case 4:
+						ListarTriagensRealizadas.listarTriagens();
 						break;
 					case 0:
 						System.out.println("Voltando...");

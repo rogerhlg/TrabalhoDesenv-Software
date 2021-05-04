@@ -37,4 +37,9 @@ public class Triagem {
 		this.criadoEm = criadoEm;
 	}
 	
+	@Override
+	public String toString() {
+		return "\nPaciente: " + paciente + " | Sintomas: " + sintoma;
+	}
+	
 }
