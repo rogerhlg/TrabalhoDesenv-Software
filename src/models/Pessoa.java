@@ -1,6 +1,8 @@
 package models;
 
-public class Pessoa {
+import java.util.Date;
+
+public abstract class Pessoa {
 	
 	private String nome;
 	private String sobrenome;
@@ -9,6 +11,11 @@ public class Pessoa {
 	private Endereco endereco;
 	private String telefone;
 	private String email;
+	private Date criadoEm;
+	
+	public Pessoa() {
+		this.criadoEm = new Date();
+	}
 
 	public String getNome() {
 		return nome;
@@ -65,10 +72,18 @@ public class Pessoa {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+	
+	public Date getCriadoEm() {
+		return criadoEm;
+	}
+
+	public void setCriadoEm(Date criadoEm) {
+		this.criadoEm = criadoEm;
+	}
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | Sobrenome: " + sobrenome + " | CPF: " + cpf + " | Idade: " + idade + " | Telefone: " + telefone + " | Email: " + email + " | " + endereco;
+		return "Nome: " + nome + " | Sobrenome: " + sobrenome + " | CPF: " + cpf + " | Idade: " + idade + " | Telefone: " + telefone + " | Email: " + email + " | " + endereco + " | Criado em: " + criadoEm;
 	}
 
 	

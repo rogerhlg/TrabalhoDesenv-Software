@@ -1,12 +1,10 @@
 package views;
 
-import java.util.Scanner;
-
+//import java.util.Scanner;
 import controllers.TriagemController;
+import utils.Console;
 
 public class Principal {
-	
-	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		
@@ -19,8 +17,7 @@ public class Principal {
 			System.out.println("3 - Triagem");
 			System.out.println("4 - Consulta");
 			System.out.println("5 - Sair");
-			System.out.println("\nDigite a opção desejada: ");
-			opcao = sc.nextInt();
+			opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 			
 			switch (opcao) {
 			case 1: {
@@ -31,8 +28,7 @@ public class Principal {
 					System.out.println("3 - Alterar enfermeira");
 					System.out.println("4 - Deletar enfermeira");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a opção desejada: ");
-					opcao = sc.nextInt();
+					opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 					
 					switch (opcao) {
 					case 1:
@@ -66,8 +62,7 @@ public class Principal {
 					System.out.println("3 - Alterar paciente");
 					System.out.println("4 - Deletar paciente");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a opção desejada: ");
-					opcao = sc.nextInt();
+					opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 					
 					switch (opcao) {
 					case 1:
@@ -101,8 +96,7 @@ public class Principal {
 					System.out.println("3 - Consultar fila de espera para triagem (por ordem de chegada)");
 					System.out.println("4 - Listar triagens realizadas");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a opção desejada: ");
-					opcao = sc.nextInt();
+					opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 					
 					switch (opcao) {
 					case 1:
@@ -131,8 +125,7 @@ public class Principal {
 					System.out.println("\n-- MENU CONSULTA COM MÉDICO --");
 					System.out.println("1 - Fila de espera para consulta (por ordem de prioridade)");
 					System.out.println("0 - Voltar");
-					System.out.println("\nDigite a opção desejada: ");
-					opcao = sc.nextInt();
+					opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 					
 					switch (opcao) {
 					case 1:
