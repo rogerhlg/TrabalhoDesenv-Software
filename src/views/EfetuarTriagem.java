@@ -35,8 +35,9 @@ public class EfetuarTriagem {
 			paciente = FilaTriagemController.proximo();
 			
 			if( paciente != null) {
-				String nome = paciente.getPessoa().getNome();
-				String cpf = paciente.getPessoa().getCpf();
+				String nome = paciente.getNome();
+				String cpf = paciente.getCpf();
+
 				
 				System.out.println("\nTriagem aberta para: \nPaciente: " + nome + " | CPF: " + cpf );
 				

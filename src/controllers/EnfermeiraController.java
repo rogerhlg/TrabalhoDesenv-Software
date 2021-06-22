@@ -17,7 +17,7 @@ public class EnfermeiraController {
 	 
 	public static Boolean cadastrar(Enfermeira enfermeira) {
 		//VERIFICA SE O ENFERMEIRA (CPF) JÁ ESTÁ PRESENTE NA LISTA.
-		if(buscarPorCpf(enfermeira.getPessoa().getCpf()) == null) {
+		if(buscarPorCpf(enfermeira.getCpf()) == null) {
 			enfermeiras.add(enfermeira);
 			return true;
 		}
@@ -28,7 +28,7 @@ public class EnfermeiraController {
 	
 	public static Enfermeira buscarPorCpf(String cpf){
 		for(Enfermeira EnfermeiraCadastrada : enfermeiras) {
-			if(EnfermeiraCadastrada.getPessoa().getCpf().equals(cpf)){
+			if(EnfermeiraCadastrada.getCpf().equals(cpf)){
 				return EnfermeiraCadastrada;
 			}
 		}
@@ -47,7 +47,7 @@ public class EnfermeiraController {
 	public static void alterar(String cpf, int op, String newValue) {
 		Enfermeira enfermeira = buscarPorCpf(cpf);
 		Pessoa pessoa = enfermeira.getPessoa();
-		Endereco endereco = enfermeira.getPessoa().getEndereco();
+		Endereco endereco = enfermeira.getEndereco();
 		if(op==1)
 			pessoa.setNome(newValue);
 		if(op==2)

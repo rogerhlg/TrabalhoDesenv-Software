@@ -15,7 +15,7 @@ public class PacienteController {
 	}
 	
 	public static boolean cadastrar(Paciente paciente) {
-		if(buscarPorCpf(paciente.getPessoa().getCpf()) == null) {
+		if(buscarPorCpf(paciente.getCpf()) == null) {
 			pacientes.add(paciente);
 			return true;
 		}
@@ -24,7 +24,7 @@ public class PacienteController {
 	
 	public static Paciente buscarPorCpf(String cpf) {
 		for(Paciente pacienteCadastrado : pacientes) {
-			if(pacienteCadastrado.getPessoa().getCpf().equals(cpf)) {
+			if(pacienteCadastrado.getCpf().equals(cpf)) {
 				return pacienteCadastrado;
 			}
 		}	
@@ -43,7 +43,7 @@ public class PacienteController {
 	public static void alterar(String cpf, int op, String newValue) {
 		Paciente paciente = buscarPorCpf(cpf);
 		Pessoa pessoa = paciente.getPessoa();
-		Endereco endereco = paciente.getPessoa().getEndereco();
+		Endereco endereco = paciente.getEndereco();
 		if(op==1)
 			pessoa.setNome(newValue);
 		if(op==2)
@@ -69,7 +69,7 @@ public class PacienteController {
 	}
 	
 	public static void alterar(String cpf, int op, int newValue) {
-		Paciente paciente = buscarPorCpf(cpf);
+		buscarPorCpf(cpf);
 		Pessoa pessoa = paciente.getPessoa();
 		if(op==4)
 			pessoa.setIdade(newValue);

@@ -1,17 +1,39 @@
 package views;
 
+import java.util.Scanner;
 import controllers.FilaTriagemController;
 import controllers.PacienteController;
 import models.Paciente;
 
 public class CadastrarPaciente {
 
-	private static Paciente paciente;	
+	private static Paciente paciente;
+	private static Scanner sc = new Scanner(System.in);
 	
 	public static void renderizar() {
 		paciente = new Paciente();
 		System.out.println("\n-- CADASTRO DE PACIENTE --  \n");
-		paciente.setPessoa(CadastrarPessoa.renderizar());
+		System.out.println("\n### DADOS PESSOAIS ### ");
+		System.out.println("\nInsira o nome: ");
+		paciente.setNome(sc.next());
+		
+		System.out.println("\nInsira o sobrenome: ");
+		paciente.setSobrenome(sc.next());
+		
+		System.out.println("\nInsira o CPF: ");
+		paciente.setCpf(sc.next());
+		
+		System.out.println("\nInsira a idade: ");
+		paciente.setIdade(sc.nextInt());
+		
+		System.out.println("\nInsira o telefone: ");
+		paciente.setTelefone(sc.next());
+		
+		System.out.println("\nInsira o email: ");
+		paciente.setEmail(sc.next());
+		
+		paciente.setEndereco(CadastrarEndereco.renderizar());
+		//paciente.setPessoa(CadastrarPessoa.renderizar());
 		if(PacienteController.cadastrar(paciente)) {
 			System.out.println("\nPaciente cadastrado com sucesso!");
 			if(FilaTriagemController.adicionar(paciente)){
