@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 
 import controllers.EnfermeiraController;
+import utils.Console;
 
 public class AlterarEnfermeira {
 	private static Scanner sc = new Scanner(System.in);
@@ -25,7 +26,7 @@ public class AlterarEnfermeira {
 					+ "			\n10- Cidade"
 					+ "			\n11- CEP"
 					+ "			\n0- VOLTAR\n");
-			op = sc.nextInt();
+			op = Console.lerInteiro("Insira a opcao desejada: ");
 			switch(op) {
 			case 1:
 				System.out.println("\nInsira o novo nome:");
@@ -41,7 +42,6 @@ public class AlterarEnfermeira {
 				
 			case 4:
 				System.out.println("\nInsira a nova idade:");
-				EnfermeiraController.alterar(cpf,op,sc.nextInt());
 				break;
 				
 			case 5:
@@ -79,7 +79,7 @@ public class AlterarEnfermeira {
 				System.out.println("\nOpção inexistente!");
 				break;
 			}
-			if(op!=0 && op!= 4)
+			if(op!=0)
 			EnfermeiraController.alterar(cpf,op,sc.next());
 			
 			}while(op != 0);

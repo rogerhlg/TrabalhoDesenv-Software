@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import models.Endereco;
 import models.Paciente;
-import models.Pessoa;
 
 public class PacienteController {
 
@@ -42,18 +41,17 @@ public class PacienteController {
 	
 	public static void alterar(String cpf, int op, String newValue) {
 		Paciente paciente = buscarPorCpf(cpf);
-		Pessoa pessoa = paciente.getPessoa();
 		Endereco endereco = paciente.getEndereco();
 		if(op==1)
-			pessoa.setNome(newValue);
+			paciente.setNome(newValue);
 		if(op==2)
-			pessoa.setSobrenome(newValue);
+			paciente.setSobrenome(newValue);
 		if(op==3)
-			pessoa.setCpf(newValue);
+			paciente.setCpf(newValue);
 		if(op==5)
-			pessoa.setTelefone(newValue);
+			paciente.setTelefone(newValue);
 		if(op==6)
-			pessoa.setEmail(newValue);
+			paciente.setEmail(newValue);
 		if(op==7)
 			endereco.setLogradouro(newValue);
 		if(op==8)
@@ -63,19 +61,17 @@ public class PacienteController {
 		if(op==10)
 			endereco.setCidade(newValue);
 		if(op==11)
-			endereco.setCep(newValue);
-		
-		paciente.setPessoa(pessoa);
+			endereco.setCep(newValue);		
 	}
 	
 	public static void alterar(String cpf, int op, int newValue) {
-		buscarPorCpf(cpf);
-		Pessoa pessoa = paciente.getPessoa();
+		Paciente paciente = buscarPorCpf(cpf);
 		if(op==4)
-			pessoa.setIdade(newValue);
+			paciente.setIdade(newValue);
 		
-		paciente.setPessoa(pessoa);
-		
+		/*
+		 * paciente.setPessoa(pessoa);
+		 */		
 	}
 	
 }

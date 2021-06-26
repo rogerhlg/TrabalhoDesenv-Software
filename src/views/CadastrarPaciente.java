@@ -4,6 +4,7 @@ import java.util.Scanner;
 import controllers.FilaTriagemController;
 import controllers.PacienteController;
 import models.Paciente;
+import utils.Console;
 
 public class CadastrarPaciente {
 
@@ -23,8 +24,7 @@ public class CadastrarPaciente {
 		System.out.println("\nInsira o CPF: ");
 		paciente.setCpf(sc.next());
 		
-		System.out.println("\nInsira a idade: ");
-		paciente.setIdade(sc.nextInt());
+		paciente.setIdade(Console.lerInteiro("\nInsira a idade: "));
 		
 		System.out.println("\nInsira o telefone: ");
 		paciente.setTelefone(sc.next());

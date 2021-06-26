@@ -46,18 +46,19 @@ public class EnfermeiraController {
 	
 	public static void alterar(String cpf, int op, String newValue) {
 		Enfermeira enfermeira = buscarPorCpf(cpf);
-		Pessoa pessoa = enfermeira.getPessoa();
 		Endereco endereco = enfermeira.getEndereco();
 		if(op==1)
-			pessoa.setNome(newValue);
+			enfermeira.setNome(newValue);
 		if(op==2)
-			pessoa.setSobrenome(newValue);
+			enfermeira.setSobrenome(newValue);
 		if(op==3)
-			pessoa.setCpf(newValue);
+			enfermeira.setCpf(newValue);
+		if(op==4)
+			enfermeira.setIdade(Integer.parseInt(newValue));
 		if(op==5)
-			pessoa.setTelefone(newValue);
+			enfermeira.setTelefone(newValue);
 		if(op==6)
-			pessoa.setEmail(newValue);
+			enfermeira.setEmail(newValue);
 		if(op==7)
 			endereco.setLogradouro(newValue);
 		if(op==8)
@@ -67,17 +68,14 @@ public class EnfermeiraController {
 		if(op==10)
 			endereco.setCidade(newValue);
 		if(op==11)
-			endereco.setCep(newValue);
-		
-		enfermeira.setPessoa(pessoa);
+			endereco.setCep(newValue);		
 	}
 	
-	public static void alterar(String cpf, int op, int newValue) {
-		Enfermeira enfermeira = buscarPorCpf(cpf);
-		Pessoa pessoa = enfermeira.getPessoa();
-		if(op==4)
-			pessoa.setIdade(newValue);
-		
-		enfermeira.setPessoa(pessoa);
-	}
+	/*
+	 * public static void alterar(String cpf, int op, int newValue) { Enfermeira
+	 * enfermeira = buscarPorCpf(cpf); Pessoa pessoa = enfermeira.getPessoa();
+	 * if(op==4) pessoa.setIdade(newValue);
+	 * 
+	 * enfermeira.setPessoa(pessoa); }
+	 */
 }

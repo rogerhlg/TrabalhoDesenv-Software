@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 import controllers.EnfermeiraController;
 import models.Enfermeira;
+import utils.Console;
 
 public class CadastrarEnfermeira {
 	
@@ -22,8 +23,7 @@ public class CadastrarEnfermeira {
 		System.out.println("\nInsira o CPF: ");
 		enfermeira.setCpf(sc.next());
 		
-		System.out.println("\nInsira a idade: ");
-		enfermeira.setIdade(sc.nextInt());
+		enfermeira.setIdade(Console.lerInteiro("\"\\nInsira a idade: \""));
 		
 		System.out.println("\nInsira o telefone: ");
 		enfermeira.setTelefone(sc.next());
