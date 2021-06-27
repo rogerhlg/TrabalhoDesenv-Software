@@ -30,9 +30,7 @@ public class CadastrarSintomas {
 			sintoma.setGrauIntesidade(intensidade);
 			sintomas.add(sintoma);
 			do {
-				System.out.println("\n1 - Inserir novo sintoma\n0 - Voltar");
-				op = sc.nextInt();
-				sc.nextLine();
+				op = Console.lerInteiro("\n1 - Inserir novo sintoma\n0 - Voltar");
 				if (op != 1 && op != 0) {
 					System.out.println("\n**ERRO** Opção inválida!");
 				}

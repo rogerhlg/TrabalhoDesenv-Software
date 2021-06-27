@@ -133,7 +133,7 @@ public class Principal {
 						TriagemController.listar();
 						break;
 					case 2:
-						TriagemController.resultadoConsulta();
+						TriagemController.realizarConsulta();
 						break;
 					case 0:
 						System.out.println("Voltando...");
