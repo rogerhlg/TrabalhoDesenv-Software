@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import models.Sintoma;
+import utils.Console;
 
 public class CadastrarSintomas {
 	private static Scanner sc = new Scanner(System.in);
@@ -19,10 +20,10 @@ public class CadastrarSintomas {
 			System.out.println("\nInsira o sintoma: ");
 			sintoma.setNome(sc.nextLine());
 			do {
-				System.out.println("\nInforme o grau de intesidade - [1] FRACO - [2] MÉDIO  - [3] FORTE");
-				intensidade = sc.nextInt();
-				sc.nextLine();
-				if(intensidade>3 || intensidade <1) {
+				intensidade = Console.lerInteiro("\nInforme o grau de intesidade - [1] FRACO - [2] MÉDIO  - [3] FORTE");
+				/*
+				 * sc.nextLine();
+				 */				if(intensidade>3 || intensidade <1) {
 					System.out.println("\nGrau de intensidade inválido! Insira novamente");
 				}
 			}while(intensidade>3 || intensidade <1);

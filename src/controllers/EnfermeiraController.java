@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import models.Endereco;
 import models.Enfermeira;
-import models.Pessoa;
 
 public class EnfermeiraController {
 	

@@ -124,12 +124,16 @@ public class Principal {
 				do {
 					System.out.println("\n-- MENU CONSULTA COM MÉDICO --");
 					System.out.println("1 - Fila de espera para consulta (por ordem de prioridade)");
+					System.out.println("2 - Realizar consulta");
 					System.out.println("0 - Voltar");
 					opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 					
 					switch (opcao) {
 					case 1:
 						TriagemController.listar();
+						break;
+					case 2:
+						TriagemController.resultadoConsulta();
 						break;
 					case 0:
 						System.out.println("Voltando...");
