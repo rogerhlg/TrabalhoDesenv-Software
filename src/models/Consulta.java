@@ -18,7 +18,7 @@ public class Consulta {
 	}
 	@Override
 	public String toString() {
-		return "Consulta para: " + triagem.getPaciente().getNome() + ", no consultorio: " + "Andar: " + consultorio.getAndar() + ("Sala: ")+ consultorio.getNome()  + "\n";
+		return "Consulta para: " + triagem.getPaciente().getNome() + ", no consultorio - " + "Andar: " + consultorio.getAndar() + (" Sala: ") + consultorio.getNome()  + "\n";
 	}
 	
 }

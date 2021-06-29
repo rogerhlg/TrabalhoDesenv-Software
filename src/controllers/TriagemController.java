@@ -21,7 +21,7 @@ public class TriagemController {
 	private static Queue<Triagem> queue = new LinkedList();
 
 	public static ArrayList<Consultorio> formarConsultorios() {
-		for(int i=0; i<5; i++) {
+		for(int i=1; i<6; i++) {
 			consultorio = new Consultorio();
 			consultorio.setDisponibilidade(true);
 			consultorio.setAndar(String.valueOf(1));
