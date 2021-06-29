@@ -9,7 +9,6 @@ import controllers.EnfermeiraController;
 import controllers.SintomasController;
 import controllers.TriagemController;
 import models.Paciente;
-import models.Consulta;
 import models.Enfermeira;
 import models.Sintoma;
 import models.Triagem;

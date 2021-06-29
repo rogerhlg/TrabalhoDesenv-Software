@@ -132,7 +132,7 @@ public class Principal {
 					
 					switch (opcao) {
 					case 1:
-						ConsultaListarFila.renderizarFila();;
+						ConsultaListarFila.renderizarFila();
 						break;
 					case 2:
 						TriagemController.realizarConsulta();

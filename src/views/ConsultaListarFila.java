@@ -10,7 +10,7 @@ public class ConsultaListarFila {
 	public static void renderizarFila(){
 		ArrayList<Triagem> filaConsulta = TriagemController.listar();
 		if( filaConsulta != null ) {
-			System.out.println("\n***FILA DA CONSULTA ***" + filaConsulta);
+			System.out.println("\n***FILA DA CONSULTA ***\n" + filaConsulta);
 		}
 		else
 			System.out.println("\n***Fila vazia!***");
@@ -19,7 +19,7 @@ public class ConsultaListarFila {
 	public static void renderizarNextPaciente(){
 		Triagem proxPaciente = TriagemController.proxPaciente();
 		if( proxPaciente != null ) {
-			System.out.println("\n***Proximo paciente:  ***" + proxPaciente);
+			System.out.println("\n***Proximo paciente:  ***\n" + proxPaciente);
 		}
 		else
 			System.out.println("\n***Fila vazia!***");
