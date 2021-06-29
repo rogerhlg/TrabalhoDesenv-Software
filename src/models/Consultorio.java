@@ -7,7 +7,7 @@ public class Consultorio {
 	private Paciente paciente;
 	
 	public String getNome() {
-		return andar+nome;
+		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;

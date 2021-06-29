@@ -16,5 +16,9 @@ public class Consulta {
 	public void setConsultorio(Consultorio consultorio) {
 		this.consultorio = consultorio;
 	}
+	@Override
+	public String toString() {
+		return "Consulta para: " + triagem.getPaciente().getNome() + ", no consultorio: " + "Andar: " + consultorio.getAndar() + ("Sala: ")+ consultorio.getNome()  + "\n";
+	}
 	
 }

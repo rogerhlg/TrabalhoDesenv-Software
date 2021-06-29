@@ -7,7 +7,7 @@ import models.Endereco;
 import models.Enfermeira;
 import models.IEnfermeira;
 
-public class EnfermeiraController implements IEnfermeira{
+public class EnfermeiraController{
 	
 	private static ArrayList<Enfermeira> enfermeiras = new ArrayList<Enfermeira>(); 
 	

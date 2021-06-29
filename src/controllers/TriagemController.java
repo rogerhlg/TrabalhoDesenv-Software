@@ -37,7 +37,7 @@ public class TriagemController {
 		return filaConsulta;
 	}
 	
-	public static void cadastrar(Triagem triagem){
+	public static Consulta cadastrar(Triagem triagem){
 		if(consultorios.isEmpty()) {
 			formarConsultorios();
 		}
@@ -49,38 +49,37 @@ public class TriagemController {
 			if(consultorio.getDisponibilidade()) {
 				consultorio.setDisponibilidade(false);
 				consultorio.setPaciente((triagem.getPaciente()));
-				System.out.println("consultorio:" + consultorio);
 				consulta.setConsultorio(consultorio);
 				consulta.setTriagems(triagem);
 				consultas.add(consulta);
-				break;
-				//return consulta; fazer a view para capturar o retorno da consulta
+				return consulta;
 			}
 		}
-		//return null;
+		return null;
 		
 	}
 	
-	public static void listar() {
+	public static ArrayList<Triagem> listar() {
 		
 		if(!filaConsulta.isEmpty()) {
-			System.out.println(filaConsulta); //mudar isso, printar na view 
 			Queue<Triagem> queue = new LinkedList(filaConsulta);
+			return filaConsulta; //mudar isso, printar na view 
 		}
 		else
-			System.out.println("Fila vazia!");
+			return null;
 	}
 	
 
-	public static void proxPaciente() {
+	public static Triagem proxPaciente() {
 		if(!filaConsulta.isEmpty()) {
-			System.out.println(filaConsulta.get(0)+ "\n\n\n\n");	
+			return filaConsulta.get(0);	
 		}
+		return null;
 	}
 	
 	public static void realizarConsulta() {
 		int intensidadeSintomaCovid = 0;
-		Queue<Triagem> queue = new LinkedList(filaConsulta); //problema em retirar o nome da lista, ver depois
+		Queue<Triagem> queue = new LinkedList(filaConsulta); 
 		Triagem consulta = queue.poll();
 		filaConsulta.remove(consulta);
 		

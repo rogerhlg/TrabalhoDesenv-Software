@@ -8,6 +8,7 @@ import controllers.EnfermeiraController;
 import controllers.SintomasController;
 import controllers.TriagemController;
 import models.Paciente;
+import models.Consulta;
 import models.Enfermeira;
 import models.Sintoma;
 import models.Triagem;
@@ -50,7 +51,7 @@ public class EfetuarTriagem {
 				triagem.setUrgencia(urgencia);
 				triagem.setSintoma(sintomas);
 				//ADICIONAR A TRIAGENS CONCLUIDAS
-				TriagemController.cadastrar(triagem);
+				System.out.println(TriagemController.cadastrar(triagem));
 				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
 				FilaTriagemController.remover();
 				System.out.println("\nTriagem Finalizada!");
