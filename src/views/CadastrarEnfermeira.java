@@ -23,7 +23,7 @@ public class CadastrarEnfermeira {
 		System.out.println("\nInsira o CPF: ");
 		enfermeira.setCpf(sc.next());
 		
-		enfermeira.setIdade(Console.lerInteiro("\"\\nInsira a idade: \""));
+		enfermeira.setIdade(Console.lerInteiro("\nInsira a idade: "));
 		
 		System.out.println("\nInsira o telefone: ");
 		enfermeira.setTelefone(sc.next());

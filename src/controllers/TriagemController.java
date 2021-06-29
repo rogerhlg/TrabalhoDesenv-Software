@@ -4,7 +4,6 @@ import models.Consulta;
 import models.Consultorio;
 import models.Sintoma;
 import models.Triagem;
-import utils.Console;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -92,7 +91,7 @@ public class TriagemController {
 				if(consultorioOcupacao.getPaciente() != null) {
 					String cpf = consultorioOcupacao.getPaciente().getCpf();
 					if(cpf.equals(pacienteDavez)) {
-						System.out.println("\nConsulta aberta para: " + consultorioOcupacao.getPaciente() + "Na sala: " + consultorioOcupacao.getNome() + "\n");
+						System.out.println("\nConsulta aberta para: " + consultorioOcupacao.getPaciente().getNome() + consultorioOcupacao.getPaciente().getSobrenome() + " - Na sala: " + consultorioOcupacao.getNome() + "\n");
 					}
 				}		
 			}	
@@ -100,13 +99,13 @@ public class TriagemController {
 		sintomas = consulta.getSintoma();
 		for (Sintoma sintomaPaciente : sintomas) {
 			String sintoma = sintomaPaciente.getNome();	
-			if(sintoma.equals("febre") || sintoma.equals("falta de ar")) {
-				System.out.println("\nUm sintoma detectado: " + sintomaPaciente.getNome());	
+			if(sintoma.equals("febre") || sintoma.equals("falta de ar") || sintoma.equals("dor no peito") || sintoma.equals("tosse") || sintoma.equals("cansaço")) {
+				System.out.println("\nSintoma detectado: " + sintomaPaciente.getNome());	
 				intensidadeSintomaCovid += sintomaPaciente.getGrauIntesidade();
 			}
 		}
 		if(intensidadeSintomaCovid>5) {
-			System.out.println("\n*****Covid******, vamos iniciar o isolamento.");	
+			System.out.println("\n*****ALTO RISCO DE COVID******, vamos iniciar o isolamento.");	
 		}
 		else
 			System.out.println("\nEsta tudo bem, um xarope resolve.\n");	
