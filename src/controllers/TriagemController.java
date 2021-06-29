@@ -77,11 +77,11 @@ public class TriagemController {
 	}
 	
 	public static void realizarConsulta() {
-		int intensidadeSintomaCovid = 0;
-		Queue<Triagem> queue = new LinkedList(filaConsulta); 
-		Triagem consulta = queue.poll();
+		int intensidadeSintomaCovid = 0;	
+		Triagem consulta = filaConsulta.get(0);
+		System.out.println(consulta);
 		filaConsulta.remove(consulta);
-		
+
 		String pacienteDavez = consulta.getPaciente().getCpf();
 		
 		for(Consultorio consultorioOcupacao : consultorios) {
