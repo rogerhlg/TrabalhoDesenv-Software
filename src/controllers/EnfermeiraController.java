@@ -5,17 +5,27 @@ import java.util.ArrayList;
 
 import models.Endereco;
 import models.Enfermeira;
-import models.IEnfermeira;
 
-public class EnfermeiraController implements IEnfermeira{
+public class EnfermeiraController implements IEnfermeiraController{
+	
+	//Singleton
+		private static EnfermeiraController controller;	
+		public static  EnfermeiraController retornarInstancia() {
+			if(controller  == null) {
+				controller = new EnfermeiraController();
+			}
+			return controller;
+		}
 	
 	private static ArrayList<Enfermeira> enfermeiras = new ArrayList<Enfermeira>(); 
 	
-	public static ArrayList<Enfermeira> listar() {
+	@Override
+	public ArrayList<Enfermeira> listar() {
 		return enfermeiras;
 	}
-	 
-	public static Boolean cadastrar(Enfermeira enfermeira) {
+	
+	@Override
+	public Boolean cadastrar(Enfermeira enfermeira) {
 		//VERIFICA SE O ENFERMEIRA (CPF) JÁ ESTÁ PRESENTE NA LISTA.
 		if(buscarPorCpf(enfermeira.getCpf()) == null) {
 			enfermeiras.add(enfermeira);
@@ -26,7 +36,8 @@ public class EnfermeiraController implements IEnfermeira{
 	}
 	
 	
-	public static Enfermeira buscarPorCpf(String cpf){
+	@Override
+	public Enfermeira buscarPorCpf(String cpf){
 		for(Enfermeira EnfermeiraCadastrada : enfermeiras) {
 			if(EnfermeiraCadastrada.getCpf().equals(cpf)){
 				return EnfermeiraCadastrada;
@@ -35,7 +46,8 @@ public class EnfermeiraController implements IEnfermeira{
 		return null;
 	}
 	
-	public static Boolean deletar(String cpf) {
+	@Override
+	public Boolean deletar(String cpf) {
 		Enfermeira enfermeira = buscarPorCpf(cpf);
 		if(enfermeira != null) {
 			enfermeiras.remove(enfermeira);
@@ -44,7 +56,8 @@ public class EnfermeiraController implements IEnfermeira{
 		return false;
 	}
 	
-	public static void alterar(String cpf, int op, String newValue) {
+	@Override
+	public void alterar(String cpf, int op, String newValue) {
 		Enfermeira enfermeira = buscarPorCpf(cpf);
 		Endereco endereco = enfermeira.getEndereco();
 		if(op==1)

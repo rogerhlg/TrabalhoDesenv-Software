@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controllers.FilaTriagemController;
+import controllers.ISintomasController;
 import controllers.EnfermeiraController;
 import controllers.SintomasController;
 import controllers.TriagemController;
@@ -19,8 +20,9 @@ public class EfetuarTriagem {
 	private static Enfermeira enfermeira;
 	private static Scanner sc = new Scanner(System.in);
 	private static ArrayList<Sintoma> sintomas;
-	private static SintomasController sintomass = new SintomasController();
-
+	private static ISintomasController sintomass = new SintomasController();
+	private static EnfermeiraController controller = EnfermeiraController.retornarInstancia();
+	private static FilaTriagemController controller1 = FilaTriagemController.retornarInstancia();
 	
 	public static void renderizar() {
 		int urgencia;
@@ -31,10 +33,10 @@ public class EfetuarTriagem {
 		sintomas = new ArrayList<Sintoma>();
 		
 		System.out.println("\nInforme o CPF da enfermeira: ");
-		enfermeira = EnfermeiraController.buscarPorCpf(sc.next());
+		enfermeira = controller.buscarPorCpf(sc.next());
 		if( enfermeira != null) {
 			triagem.setEnfermeira(enfermeira);
-			paciente = FilaTriagemController.proximo();
+			paciente = controller1.proximo();
 			
 			if( paciente != null) {
 				String nome = paciente.getNome();
@@ -52,7 +54,7 @@ public class EfetuarTriagem {
 				//ADICIONAR A TRIAGENS CONCLUIDAS
 				TriagemController.cadastrar(triagem);
 				//REMOVENDO O PACIENTE DA FILA DA RECEPÇÃO, JÁ QUE CONCLUIU A TRIAGEM
-				FilaTriagemController.remover();
+				controller1.remover();
 				System.out.println("\nTriagem Finalizada!");
 				
 			}

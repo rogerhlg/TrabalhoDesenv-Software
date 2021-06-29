@@ -7,11 +7,13 @@ import utils.Console;
 
 public class AlterarEnfermeira {
 	private static Scanner sc = new Scanner(System.in);
+	private static EnfermeiraController controller = EnfermeiraController.retornarInstancia();
+
 	public static void renderizar() {
 		int op;
 		System.out.println("\nInsira o CPF da enfermeira que deseja ALTERAR: ");
 		String cpf = sc.next();
-		if(EnfermeiraController.buscarPorCpf(cpf) != null) {
+		if(controller.buscarPorCpf(cpf) != null) {
 			do{
 			System.out.println("\nSELECIONE A OPCAO DESEJADA PARA ALTERAR");
 			System.out.println("\n1- Nome"
@@ -80,7 +82,7 @@ public class AlterarEnfermeira {
 				break;
 			}
 			if(op!=0)
-			EnfermeiraController.alterar(cpf,op,sc.next());
+			controller.alterar(cpf,op,sc.next());
 			
 			}while(op != 0);
 		
