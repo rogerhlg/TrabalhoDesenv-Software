@@ -18,8 +18,6 @@ public class TriagemController {
 	private static Consultorio consultorio = new Consultorio();
 	private static ArrayList<Consulta> consultas = new ArrayList<Consulta>();
 	private static Consulta consulta = new Consulta();
-	private static Queue<Triagem> queue = new LinkedList();
-	private static ArrayList<String> medico = new ArrayList<>();
 
 	public static ArrayList<Consultorio> formarConsultorios() {
 		for(int i=0; i<5; i++) {
@@ -62,7 +60,6 @@ public class TriagemController {
 	public static ArrayList<Triagem> listar() {
 		
 		if(!filaConsulta.isEmpty()) {
-			Queue<Triagem> queue = new LinkedList(filaConsulta);
 			return filaConsulta; //mudar isso, printar na view 
 		}
 		else
@@ -78,11 +75,11 @@ public class TriagemController {
 	}
 	
 	public static void realizarConsulta() {
-		int intensidadeSintomaCovid = 0;
-		Queue<Triagem> queue = new LinkedList(filaConsulta); 
-		Triagem consulta = queue.poll();
+		int intensidadeSintomaCovid = 0;	
+		Triagem consulta = filaConsulta.get(0);
+		System.out.println(consulta);
 		filaConsulta.remove(consulta);
-		
+
 		String pacienteDavez = consulta.getPaciente().getCpf();
 		
 		for(Consultorio consultorioOcupacao : consultorios) {
