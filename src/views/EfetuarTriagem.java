@@ -19,6 +19,8 @@ public class EfetuarTriagem {
 	private static Enfermeira enfermeira;
 	private static Scanner sc = new Scanner(System.in);
 	private static ArrayList<Sintoma> sintomas;
+	private static SintomasController sintomass = new SintomasController();
+
 	
 	public static void renderizar() {
 		int urgencia;
@@ -44,7 +46,7 @@ public class EfetuarTriagem {
 				triagem.setPaciente(paciente);
 				//CHAMANDO O CADASTRO DE SINTOMAS (NOME E GRAU DE GRAVIDADE)
 				sintomas = CadastrarSintomas.renderizar();
-				urgencia = SintomasController.retornoUrgencia(sintomas);
+				urgencia = sintomass.retornoUrgencia(sintomas);
 				triagem.setUrgencia(urgencia);
 				triagem.setSintoma(sintomas);
 				//ADICIONAR A TRIAGENS CONCLUIDAS

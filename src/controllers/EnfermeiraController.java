@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 import models.Endereco;
 import models.Enfermeira;
+import models.IEnfermeira;
 
-public class EnfermeiraController {
+public class EnfermeiraController implements IEnfermeira{
 	
 	private static ArrayList<Enfermeira> enfermeiras = new ArrayList<Enfermeira>(); 
 	
