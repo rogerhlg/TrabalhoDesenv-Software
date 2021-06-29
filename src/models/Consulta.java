@@ -1,8 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
-
 public class Consulta {
 	private Triagem triagem;
 	private Consultorio consultorio;

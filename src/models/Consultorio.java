@@ -1,8 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
-
 public class Consultorio {
 	private String nome;
 	private String andar;
@@ -35,8 +32,8 @@ public class Consultorio {
 	}
 	@Override
 	public String toString() {
-		return "Consultorio [nome=" + nome + ", andar=" + andar + ", paciente="
-				+ paciente.getNome() + "]";
+		return "Consultorio - nome: " + nome + "| andar: " + andar + "| paciente: "
+				+ paciente.getNome();
 	}
 
 	
