@@ -5,12 +5,13 @@ import controllers.FilaTriagemController;
 public class FilaTriagem {
 	
 	private static Paciente nextPaciente;
+	private static FilaTriagemController controller = FilaTriagemController.retornarInstancia();
 	
 	public static void proximo(){
 		
 		nextPaciente = new Paciente();
 		
-		nextPaciente = FilaTriagemController.proximo();
+		nextPaciente = controller.proximo();
 		if (nextPaciente != null) {
 			System.out.println("\n" + nextPaciente);
 		}else {
@@ -20,7 +21,7 @@ public class FilaTriagem {
 	
 	public static void listar(){
 		
-		FilaTriagemController.listar();
+		controller.listar();
 
 	}
 	

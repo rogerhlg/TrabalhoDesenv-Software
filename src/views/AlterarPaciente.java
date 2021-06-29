@@ -5,12 +5,14 @@ import controllers.PacienteController;
 
 public class AlterarPaciente {
 	private static Scanner sc = new Scanner(System.in);
+	private static PacienteController controller2 = PacienteController.retornarInstancia();
+
 	public static void renderizar() {
 		int op;
 		System.out.println("\n-- ALTERAR PACIENTE --  \n");
 		System.out.println("Insira o CPF do paciente que deseja alterar: ");
 		String cpf = sc.next();
-		if(PacienteController.buscarPorCpf(cpf) != null) {
+		if(controller2.buscarPorCpf(cpf) != null) {
 			do{
 			System.out.println("\nSELECIONE A OPCAO DESEJADA PARA ALTERAR");
 			System.out.println("\n1- Nome"
@@ -41,7 +43,7 @@ public class AlterarPaciente {
 				
 			case 4:
 				System.out.println("\nInsira a nova idade:");
-				PacienteController.alterar(cpf,op,sc.nextInt());
+				controller2.alterar(cpf,op,sc.nextInt());
 				break;
 				
 			case 5:
@@ -80,7 +82,7 @@ public class AlterarPaciente {
 				break;
 			}
 			if(op!=0 && op!= 4)
-			PacienteController.alterar(cpf,op,sc.next());
+			controller2.alterar(cpf,op,sc.next());
 			
 			}while(op != 0);
 		

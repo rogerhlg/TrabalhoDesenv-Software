@@ -5,11 +5,12 @@ import controllers.PacienteController;
 
 public class DeletarPaciente {
 	private static Scanner sc = new Scanner(System.in);
+	private static PacienteController controller2 = PacienteController.retornarInstancia();
 	
 	public static void renderizar() {
 		System.out.println("\n-- DELETAR PACIENTE --  \n");
 		System.out.println("Insira o CPF do paciente que deseja deletar: ");
-		if(PacienteController.deletar(sc.next())) {
+		if(controller2.deletar(sc.next())) {
 			System.out.println("\n*** Paciente deletado com sucesso! ***");
 		}
 		else 

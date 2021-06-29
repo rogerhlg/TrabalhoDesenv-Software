@@ -9,6 +9,8 @@ public class CadastrarEnfermeira {
 	
 	private static Enfermeira enfermeira;
 	private static Scanner sc = new Scanner(System.in);
+	private static EnfermeiraController controller = EnfermeiraController.retornarInstancia();
+
 	
 	public static void renderizar() {
 		enfermeira = new Enfermeira();
@@ -33,7 +35,7 @@ public class CadastrarEnfermeira {
 		
 		enfermeira.setEndereco(CadastrarEndereco.renderizar());
 		//enfermeira.setPessoa(CadastrarPessoa.renderizar());
-		if(EnfermeiraController.cadastrar(enfermeira)) {
+		if(controller.cadastrar(enfermeira)) {
 			System.out.println("\nEnfermeira cadastrada com sucesso!");
 		}
 		else

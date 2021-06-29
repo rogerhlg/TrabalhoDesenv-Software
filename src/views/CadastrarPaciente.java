@@ -1,6 +1,7 @@
 package views;
 
 import java.util.Scanner;
+
 import controllers.FilaTriagemController;
 import controllers.PacienteController;
 import models.Paciente;
@@ -10,6 +11,8 @@ public class CadastrarPaciente {
 
 	private static Paciente paciente;
 	private static Scanner sc = new Scanner(System.in);
+	private static FilaTriagemController controller = FilaTriagemController.retornarInstancia();
+	private static PacienteController controller2 = PacienteController.retornarInstancia();
 	
 	public static void renderizar() {
 		paciente = new Paciente();
@@ -34,9 +37,9 @@ public class CadastrarPaciente {
 		
 		paciente.setEndereco(CadastrarEndereco.renderizar());
 		//paciente.setPessoa(CadastrarPessoa.renderizar());
-		if(PacienteController.cadastrar(paciente)) {
+		if(controller2.cadastrar(paciente)) {
 			System.out.println("\nPaciente cadastrado com sucesso!");
-			if(FilaTriagemController.adicionar(paciente)){
+			if(controller.adicionar(paciente)){
 				System.out.println("\nPaciente adicionado na lista de espera da triagem.");
 			}
 		}else {

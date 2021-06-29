@@ -4,28 +4,42 @@ import models.Paciente;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class FilaTriagemController {
+public class FilaTriagemController implements IFilaTriagemController {
+	
+	//Singleton
+	private static FilaTriagemController controller;	
+	public static  FilaTriagemController retornarInstancia() {
+		if(controller  == null) {
+			controller = new FilaTriagemController();
+		}
+		return controller;
+	}
+			
 	private static Queue<Paciente> filaEspera = new LinkedList<Paciente>();
 	
-	public static boolean adicionar(Paciente paciente) {
+	@Override
+	public boolean adicionar(Paciente paciente) {
 		if(filaEspera.add(paciente)) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static boolean remover() {
+	@Override
+	public boolean remover() {
 		if(filaEspera.poll()!= null) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static Paciente proximo() {
+	@Override
+	public Paciente proximo() {
 		return filaEspera.peek();
 	}
 	
-	public static void listar() {
+	@Override
+	public void listar() {
 		if(filaEspera.isEmpty()) {
 			System.out.println("\nFila vazia!");
 		}else {

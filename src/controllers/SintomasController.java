@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import models.Sintoma;
 
-public class SintomasController {
+public class SintomasController implements ISintomasController {
 	
+	@Override
 	public int retornoUrgencia(ArrayList<Sintoma> sintomas) {
 		int urgencia = 0;
 		

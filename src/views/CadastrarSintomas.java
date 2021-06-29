@@ -9,7 +9,7 @@ import utils.Console;
 public class CadastrarSintomas {
 	private static Scanner sc = new Scanner(System.in);
 	private static Sintoma sintoma;
-	private static ArrayList<Sintoma> sintomas;;
+	private static ArrayList<Sintoma> sintomas;
 
 	public static ArrayList<Sintoma> renderizar(){
 		sintomas = new ArrayList<Sintoma>();

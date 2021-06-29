@@ -5,10 +5,11 @@ import controllers.EnfermeiraController;
 
 public class DeletarEnfermeira {
 		private static Scanner sc = new Scanner(System.in);
+		private static EnfermeiraController controller = EnfermeiraController.retornarInstancia();
 		
 		public static void renderizar() {
 			System.out.println("\nInsira o CPF da enfermeira que deseja deletar: ");
-			if(EnfermeiraController.deletar(sc.next())) {
+			if(controller.deletar(sc.next())) {
 				System.out.println("\n*** Enfermeira deletada com sucesso! ***");
 			}
 			else 

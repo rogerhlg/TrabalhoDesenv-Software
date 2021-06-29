@@ -5,15 +5,26 @@ import java.util.ArrayList;
 import models.Endereco;
 import models.Paciente;
 
-public class PacienteController {
+public class PacienteController implements IPacienteController {
+	
+	//Singleton
+	private static PacienteController controller;	
+	public static  PacienteController retornarInstancia() {
+		if(controller  == null) {
+			controller = new PacienteController();
+		}
+		return controller;
+	}
 
 	private static ArrayList<Paciente> pacientes = new ArrayList<Paciente>(); 
 
-	public static ArrayList<Paciente> listar() {
+	@Override
+	public ArrayList<Paciente> listar() {
 		return pacientes;
 	}
 	
-	public static boolean cadastrar(Paciente paciente) {
+	@Override
+	public boolean cadastrar(Paciente paciente) {
 		if(buscarPorCpf(paciente.getCpf()) == null) {
 			pacientes.add(paciente);
 			return true;
@@ -21,7 +32,8 @@ public class PacienteController {
 		return false;
 	}	
 	
-	public static Paciente buscarPorCpf(String cpf) {
+	@Override
+	public Paciente buscarPorCpf(String cpf) {
 		for(Paciente pacienteCadastrado : pacientes) {
 			if(pacienteCadastrado.getCpf().equals(cpf)) {
 				return pacienteCadastrado;
@@ -30,7 +42,8 @@ public class PacienteController {
 		return null;
 	}
 	
-	public static Boolean deletar(String cpf) {
+	@Override
+	public Boolean deletar(String cpf) {
 		Paciente paciente = buscarPorCpf(cpf);
 		if(paciente != null) {
 			pacientes.remove(paciente);
@@ -39,7 +52,8 @@ public class PacienteController {
 		return false;
 	}
 	
-	public static void alterar(String cpf, int op, String newValue) {
+	@Override
+	public void alterar(String cpf, int op, String newValue) {
 		Paciente paciente = buscarPorCpf(cpf);
 		Endereco endereco = paciente.getEndereco();
 		if(op==1)
@@ -64,7 +78,8 @@ public class PacienteController {
 			endereco.setCep(newValue);		
 	}
 	
-	public static void alterar(String cpf, int op, int newValue) {
+	@Override
+	public void alterar(String cpf, int op, int newValue) {
 		Paciente paciente = buscarPorCpf(cpf);
 		if(op==4)
 			paciente.setIdade(newValue);

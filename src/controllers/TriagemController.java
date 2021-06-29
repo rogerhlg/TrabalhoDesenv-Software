@@ -90,7 +90,7 @@ public class TriagemController {
 				if(consultorioOcupacao.getPaciente() != null) {
 					String cpf = consultorioOcupacao.getPaciente().getCpf();
 					if(cpf.equals(pacienteDavez)) {
-						System.out.println("\nConsulta aberta para: " + consultorioOcupacao.getPaciente().getNome() + consultorioOcupacao.getPaciente().getSobrenome() + " - Na sala: " + consultorioOcupacao.getNome() + "\n");
+						System.out.println("\nConsulta aberta para: " + consultorioOcupacao.getPaciente().getNome() + " " + consultorioOcupacao.getPaciente().getSobrenome() + " - Na sala: " + consultorioOcupacao.getNome() + "\n");
 					}
 				}		
 			}	
